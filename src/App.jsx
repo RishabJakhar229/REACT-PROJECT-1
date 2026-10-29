@@ -1,9 +1,9 @@
 
-import {Route , Routes} from "react-router";
-import Navbar from './components/Navbar'
-import Home from './pages/Home'
-import NotFound from "./pages/NotFound";
-import RecipeDetail from "./pages/RecipeDetail";
+import { Route, Routes } from "react-router";
+import Navbar from "./components/Navbar.jsx";
+import Home from "./pages/Home.jsx";
+import NotFound from "./pages/NotFound.jsx";
+import RecipeDetail from "./pages/RecipeDetail.jsx";
 
 function App() {
   return (
