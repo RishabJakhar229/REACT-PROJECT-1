@@ -1,14 +1,330 @@
-
 @import "tailwindcss";
 
+/* ============================================================
+   INK & IVORY — design tokens
+   Charcoal black · cool gray · soft ivory
+   ============================================================ */
 @theme {
-  --color-background: #faf6ef;
-  --color-card: #ffffff;
-  --color-text: #2b2b2b;
-  --color-muted: #6b6b6b;
-  --color-accent: #b5472b;
-  --color-accent-hover: #8f3820;
-  --color-border: #e3dccf;
-  --font-serif: Georgia, serif;
-  --font-sans: Arial, sans-serif;
+  /* surfaces */
+  --color-background: #f2eee4;
+  --color-paper: #f8f5ed;
+  --color-card: #fbf9f3;
+  --color-ivory: #e9e3d6;
+  --color-ivory-deep: #ddd6c6;
+
+  /* ink */
+  --color-ink: #171614;
+  --color-ink-soft: #2a2825;
+  --color-text: #201f1c;
+  --color-graphite: #46443e;
+  --color-accent: #171614;
+  --color-accent-hover: #35322c;
+
+  /* cool grays */
+  --color-slate: #5b646b;
+  --color-muted: #7a828a;
+  --color-mist: #aeb4b8;
+  --color-fog: #e4e7e6;
+
+  /* lines */
+  --color-border: #ded8ca;
+  --color-line: #cfc8b8;
+
+  /* type */
+  --font-sans: "Source Sans 3", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-serif: "EB Garamond", "Iowan Old Style", Garamond, Georgia, "Times New Roman", serif;
+
+  /* motion */
+  --animate-marquee: marquee 46s linear infinite;
+  --animate-drift: drift 22s ease-in-out infinite alternate;
+  --animate-float: float 8s ease-in-out infinite;
+  --animate-pop: pop 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  --animate-spin-slow: spin 26s linear infinite;
+  --animate-rise: rise 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
+  --animate-breathe: breathe 7s ease-in-out infinite;
+
+  @keyframes marquee {
+    from {
+      transform: translate3d(0, 0, 0);
+    }
+    to {
+      transform: translate3d(-50%, 0, 0);
+    }
+  }
+
+  @keyframes drift {
+    0% {
+      transform: translate3d(0, 0, 0) scale(1) rotate(0deg);
+    }
+    50% {
+      transform: translate3d(2%, -3%, 0) scale(1.04) rotate(2deg);
+    }
+    100% {
+      transform: translate3d(-2%, 2%, 0) scale(1.02) rotate(-2deg);
+    }
+  }
+
+  @keyframes float {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+
+  @keyframes pop {
+    0% {
+      transform: scale(0.6);
+      opacity: 0;
+    }
+    60% {
+      transform: scale(1.12);
+    }
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+
+  @keyframes rise {
+    from {
+      opacity: 0;
+      transform: translateY(18px);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+
+  @keyframes breathe {
+    0%,
+    100% {
+      opacity: 0.5;
+      transform: scale(1);
+    }
+    50% {
+      opacity: 0.85;
+      transform: scale(1.03);
+    }
+  }
+}
+
+/* ============================================================
+   Base
+   ============================================================ */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 6rem;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    scrollbar-width: thin;
+    scrollbar-color: var(--color-line) transparent;
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-text);
+    font-family: var(--font-sans);
+    font-size: 1rem;
+    line-height: 1.65;
+    overflow-x: hidden;
+  }
+
+  ::selection {
+    background-color: var(--color-ink);
+    color: var(--color-ivory);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-slate);
+    outline-offset: 3px;
+  }
+
+  ::-webkit-scrollbar {
+    width: 11px;
+    height: 11px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    background-color: var(--color-line);
+    border: 3px solid var(--color-background);
+    border-radius: 999px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: var(--color-mist);
+  }
+}
+
+/* ============================================================
+   Paper grain — laid over the whole page
+   ============================================================ */
+.paper-grain {
+  position: fixed;
+  inset: 0;
+  z-index: 70;
+  pointer-events: none;
+  opacity: 0.5;
+  mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='0.16'/%3E%3C/svg%3E");
+}
+
+/* ============================================================
+   Utilities
+   ============================================================ */
+
+/* scroll reveal (used by useReveal) */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition:
+    opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+.reveal-show {
+  opacity: 1;
+  transform: none;
+}
+
+/* fine dashed rule */
+.dashed-rule {
+  background-image: linear-gradient(
+    to right,
+    var(--color-line) 0 6px,
+    transparent 6px 12px
+  );
+  background-size: 12px 1px;
+  background-repeat: repeat-x;
+  height: 1px;
+}
+
+/* marquee */
+.marquee-mask {
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent,
+    black 8%,
+    black 92%,
+    transparent
+  );
+  mask-image: linear-gradient(
+    to right,
+    transparent,
+    black 8%,
+    black 92%,
+    transparent
+  );
+}
+
+/* old-style (text) figures — classic numerals */
+.figures-old {
+  font-variant-numeric: oldstyle-nums;
+  font-feature-settings: "onum" 1;
+}
+
+/* small caps label */
+.eyebrow {
+  font-size: 0.7rem;
+  line-height: 1;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+/* ink stamped checkbox tick */
+.tick-pop {
+  animation: pop 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* underline that draws on hover */
+.link-underline {
+  position: relative;
+}
+.link-underline::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  height: 1px;
+  width: 100%;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.link-underline:hover::after,
+.link-underline[data-active="true"]::after {
+  transform: scaleX(1);
+}
+
+/* soft charcoal card shadow */
+.shadow-ink {
+  box-shadow:
+    0 1px 0 0 rgb(23 22 20 / 0.04),
+    0 22px 45px -30px rgb(23 22 20 / 0.45);
+}
+.shadow-ink-lg {
+  box-shadow:
+    0 2px 0 0 rgb(23 22 20 / 0.05),
+    0 40px 80px -48px rgb(23 22 20 / 0.55);
+}
+
+/* subtle striped skeleton */
+.skeleton-shimmer {
+  background-image: linear-gradient(
+    100deg,
+    var(--color-ivory) 20%,
+    var(--color-paper) 40%,
+    var(--color-ivory) 60%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.8s linear infinite;
+}
+@keyframes shimmer {
+  from {
+    background-position: 140% 0;
+  }
+  to {
+    background-position: -40% 0;
+  }
+}
+
+/* check row hover wash */
+.ink-row {
+  transition:
+    background-color 0.35s ease,
+    color 0.35s ease,
+    border-color 0.35s ease;
+}
+
+/* vertical writing label */
+.writing-vertical {
+  writing-mode: vertical-rl;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  .animate-drift,
+  .animate-float,
+  .animate-spin-slow,
+  .animate-breathe,
+  [class*="animate-"] {
+    animation: none !important;
+  }
+  .skeleton-shimmer {
+    animation: none;
+  }
 }
