@@ -78,7 +78,7 @@ function CheckableList({
       {/* header */}
       <header className="flex flex-wrap items-center justify-between gap-3 border-b border-border bg-ivory/45 px-4 py-4 sm:px-5">
         <div className="flex items-baseline gap-3">
-          <h2 className="font-serif text-2xl text-ink">{label}</h2>
+          <h2 className="font-serif text-[1.6rem] leading-none text-ink">{label}</h2>
           <span className="text-[0.72rem] tabular-nums tracking-[0.14em] text-muted">
             {done.size}/{items.length}
           </span>
@@ -143,7 +143,7 @@ function CheckableList({
                 {numbered && (
                   <span
                     aria-hidden="true"
-                    className={`mt-px w-6 shrink-0 font-serif text-[0.95rem] tabular-nums transition-colors ${
+                    className={`figures-old mt-px w-6 shrink-0 font-serif text-[1rem] transition-colors ${
                       checked ? "text-mist" : "text-slate"
                     }`}
                   >

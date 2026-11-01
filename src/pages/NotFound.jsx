@@ -19,11 +19,11 @@ function NotFound() {
           <span className="h-px w-8 bg-ink/40" />
         </div>
 
-        <h1 className="mt-6 font-serif text-[6rem] leading-none tracking-[-0.03em] text-ink sm:text-[9rem]">
+        <h1 className="figures-old mt-6 font-serif text-[6.5rem] leading-none tracking-[-0.015em] text-ink sm:text-[9.5rem]">
           4<span className="italic text-slate">0</span>4
         </h1>
 
-        <h2 className="mt-4 font-serif text-2xl text-ink sm:text-3xl">
+        <h2 className="mt-4 font-serif text-[1.65rem] text-ink sm:text-[1.95rem]">
           This dish isn&apos;t on the menu.
         </h2>
         <p className="mx-auto mt-3 max-w-sm text-[0.88rem] leading-relaxed text-graphite">

@@ -53,7 +53,7 @@ function Navbar() {
               <span className="absolute inset-0 rounded-full ring-1 ring-inset ring-white/10" />
             </span>
             <span className="leading-none">
-              <span className="block font-serif text-[1.22rem] tracking-tight text-ink">
+              <span className="block font-serif text-[1.32rem] leading-none tracking-[-0.005em] text-ink">
                 Recipe<span className="italic text-slate">Finder</span>
               </span>
               <span className="eyebrow mt-1 block text-[0.5rem] text-muted">
@@ -145,7 +145,7 @@ function Navbar() {
                   goToSection(link.id);
                 }}
                 style={{ transitionDelay: `${60 + i * 45}ms` }}
-                className={`flex items-center justify-between border-b border-border/70 py-3.5 text-left font-serif text-2xl text-ink transition-all duration-500 ${
+                className={`flex items-center justify-between border-b border-border/70 py-3.5 text-left font-serif text-[1.65rem] text-ink transition-all duration-500 ${
                   open ? "translate-y-0 opacity-100" : "translate-y-2 opacity-0"
                 }`}
               >
@@ -161,7 +161,7 @@ function Navbar() {
                 setOpen(false);
                 window.scrollTo({ top: 0, behavior: "smooth" });
               }}
-              className={`flex items-center justify-between py-3.5 text-left font-serif text-2xl text-ink transition-all delay-200 duration-500 ${
+              className={`flex items-center justify-between py-3.5 text-left font-serif text-[1.65rem] text-ink transition-all delay-200 duration-500 ${
                 open ? "translate-y-0 opacity-100" : "translate-y-2 opacity-0"
               }`}
             >

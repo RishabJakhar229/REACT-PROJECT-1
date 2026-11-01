@@ -48,7 +48,7 @@ function ProgressRing({ percent }) {
           className="transition-[stroke-dashoffset] duration-700 ease-out"
         />
       </svg>
-      <span className="absolute font-serif text-[0.95rem] tabular-nums text-ink">
+      <span className="figures-old absolute font-serif text-[1.02rem] text-ink">
         {percent}%
       </span>
     </div>
@@ -290,7 +290,7 @@ function RecipeDetail() {
               </span>
             </div>
 
-            <h1 className="mt-4 font-serif text-[2.6rem] leading-[0.98] tracking-[-0.015em] text-ink sm:text-[3.4rem]">
+            <h1 className="mt-4 font-serif text-[2.75rem] leading-[1.02] tracking-[-0.005em] text-ink sm:text-[3.55rem]">
               {recipe.name}
             </h1>
 
@@ -333,7 +333,7 @@ function RecipeDetail() {
                       <dt className="eyebrow text-[0.5rem] text-muted">
                         {m.label}
                       </dt>
-                      <dd className="mt-1 font-serif text-[1.05rem] leading-none text-ink">
+                      <dd className="figures-old mt-1 font-serif text-[1.15rem] leading-none text-ink">
                         {m.value}
                       </dd>
                     </div>
@@ -386,7 +386,7 @@ function RecipeDetail() {
               <p className="eyebrow text-[0.52rem] text-muted">
                 Cook along
               </p>
-              <p className="mt-1.5 font-serif text-[1.28rem] leading-none text-ink">
+              <p className="mt-1.5 font-serif text-[1.38rem] leading-none text-ink">
                 {percent === 100
                   ? "Ready to plate"
                   : totalDone > 0
@@ -491,7 +491,7 @@ function RecipeDetail() {
               <p className="eyebrow text-ivory/45">
                 {recipe.mealType?.join(" · ")}
               </p>
-              <h2 className="mt-3 max-w-md font-serif text-[2rem] leading-[1.1] text-ivory sm:text-[2.5rem]">
+              <h2 className="mt-3 max-w-md font-serif text-[2.1rem] leading-[1.12] text-ivory sm:text-[2.6rem]">
                 {percent === 100 ? (
                   <>
                     Plated. <span className="italic text-mist">Enjoy it.</span>

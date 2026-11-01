@@ -56,7 +56,7 @@ function RecipeCard({ recipe, index = 0 }) {
           </p>
 
           <div className="mt-1.5 flex items-end justify-between gap-3">
-            <h3 className="font-serif text-[1.4rem] leading-[1.12] text-ivory [text-shadow:0_1px_16px_rgba(23,22,20,0.5)]">
+            <h3 className="font-serif text-[1.48rem] leading-[1.15] text-ivory [text-shadow:0_1px_16px_rgba(23,22,20,0.5)]">
               {name}
             </h3>
             <span className="mb-0.5 grid h-8 w-8 shrink-0 place-items-center rounded-full border border-ivory/35 text-ivory transition-all duration-400 group-hover:rotate-45 group-hover:border-ivory group-hover:bg-ivory group-hover:text-ink">

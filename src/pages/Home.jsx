@@ -147,7 +147,7 @@ function Home() {
               <span className="eyebrow text-slate">A quiet recipe index</span>
             </div>
 
-            <h1 className="mt-6 font-serif text-[3.35rem] leading-[0.92] tracking-[-0.02em] text-ink sm:text-[4.4rem] lg:text-[4.9rem]">
+            <h1 className="mt-6 font-serif text-[3.55rem] leading-[0.95] tracking-[-0.008em] text-ink sm:text-[4.55rem] lg:text-[5rem]">
               Cook slowly,
               <br />
               <span className="italic text-slate">tick things off.</span>
@@ -198,7 +198,7 @@ function Home() {
                 { k: "Avg. rating", v: avgRating },
               ].map((s) => (
                 <div key={s.k}>
-                  <dd className="font-serif text-[1.7rem] leading-none text-ink">
+                  <dd className="figures-old font-serif text-[1.85rem] leading-none text-ink">
                     {s.v}
                   </dd>
                   <dt className="eyebrow mt-2 text-[0.55rem] text-muted">
@@ -238,7 +238,7 @@ function Home() {
 
               {/* statement */}
               <div className="absolute left-5 top-[4.6rem] max-w-[17rem] sm:left-6 sm:top-[5.6rem] sm:max-w-[19rem]">
-                <p className="font-serif text-[1.65rem] leading-[1.15] text-ivory sm:text-[2.1rem]">
+                <p className="font-serif text-[1.75rem] leading-[1.18] text-ivory sm:text-[2.2rem]">
                   Good food is
                   <br />
                   <span className="italic text-mist">mostly patience.</span>
@@ -307,7 +307,7 @@ function Home() {
 
                     <div className="mt-2 flex items-end justify-between gap-4">
                       <div className="min-w-0">
-                        <p className="truncate font-serif text-[1.35rem] leading-tight text-ink">
+                        <p className="truncate font-serif text-[1.42rem] leading-tight text-ink">
                           {featured.name}
                         </p>
                         <p className="mt-1.5 text-[0.7rem] text-graphite">
@@ -384,7 +384,7 @@ function Home() {
             <span className="eyebrow text-slate">The archive</span>
           </div>
           <div className="mt-3 flex flex-wrap items-baseline gap-x-4 gap-y-1">
-            <h2 className="font-serif text-[2.6rem] leading-tight text-ink sm:text-[3rem]">
+            <h2 className="font-serif text-[2.75rem] leading-tight text-ink sm:text-[3.15rem]">
               The Collection
             </h2>
             <span className="inline-flex items-center gap-2 pb-1.5 text-[0.74rem] uppercase tracking-[0.14em] text-muted">
@@ -472,7 +472,7 @@ function Home() {
             <span className="mx-auto mb-4 grid h-12 w-12 place-items-center rounded-full bg-ivory text-graphite">
               <Flame className="h-5 w-5" />
             </span>
-            <p className="font-serif text-2xl text-ink">{errorMsg}</p>
+            <p className="font-serif text-[1.6rem] text-ink">{errorMsg}</p>
             <p className="mx-auto mt-2 max-w-sm text-sm text-muted">
               The kitchen didn&apos;t answer this time. Refresh the page to try
               the archive again.
@@ -505,7 +505,7 @@ function Home() {
             <span className="mx-auto mb-5 grid h-12 w-12 place-items-center rounded-full bg-ivory text-graphite">
               <Search className="h-5 w-5" />
             </span>
-            <p className="font-serif text-2xl text-ink">
+            <p className="font-serif text-[1.6rem] text-ink">
               {`No recipes found for '${searchQuery}'`}
             </p>
             <p className="mx-auto mt-2 max-w-sm text-sm text-muted">
@@ -565,7 +565,7 @@ function Home() {
               <span className="h-px w-8 bg-ink/40" />
               <span className="eyebrow text-slate">The method</span>
             </div>
-            <h2 className="mt-4 font-serif text-[2.5rem] leading-[1.02] text-ink sm:text-[3.2rem]">
+            <h2 className="mt-4 font-serif text-[2.6rem] leading-[1.05] text-ink sm:text-[3.35rem]">
               A recipe page that
               <br />
               <span className="italic text-slate">keeps your place.</span>
@@ -630,7 +630,7 @@ function Home() {
               <span className="h-px w-8 bg-ink/40" />
               <span className="eyebrow text-slate">Kitchen notes</span>
             </div>
-            <h2 className="mt-3 max-w-lg font-serif text-[2.5rem] leading-[1.05] text-ink sm:text-[3rem]">
+            <h2 className="mt-3 max-w-lg font-serif text-[2.6rem] leading-[1.08] text-ink sm:text-[3.15rem]">
               Small habits, <span className="italic text-slate">better food.</span>
             </h2>
           </div>
@@ -652,11 +652,11 @@ function Home() {
                   <span className="grid h-11 w-11 place-items-center rounded-full bg-ivory text-ink transition-colors duration-500 group-hover:bg-ink group-hover:text-ivory">
                     <Icon className="h-5 w-5" />
                   </span>
-                  <span className="font-serif text-[2rem] leading-none text-ivory-deep transition-colors duration-500 group-hover:text-line">
+                  <span className="figures-old font-serif text-[2.1rem] leading-none text-ivory-deep transition-colors duration-500 group-hover:text-line">
                     {note.n}
                   </span>
                 </div>
-                <h3 className="mt-6 font-serif text-[1.34rem] leading-snug text-ink">
+                <h3 className="mt-6 font-serif text-[1.42rem] leading-snug text-ink">
                   {note.title}
                 </h3>
                 <p className="mt-2.5 text-[0.85rem] leading-relaxed text-graphite">
@@ -677,7 +677,7 @@ function Home() {
           <div className="relative flex flex-col items-start justify-between gap-7 sm:flex-row sm:items-center">
             <div>
               <p className="eyebrow text-ivory/45">Ready when you are</p>
-              <h2 className="mt-3 max-w-md font-serif text-[2.1rem] leading-[1.08] text-ivory sm:text-[2.6rem]">
+              <h2 className="mt-3 max-w-md font-serif text-[2.2rem] leading-[1.1] text-ivory sm:text-[2.7rem]">
                 Pick something, <span className="italic text-mist">pour something.</span>
               </h2>
             </div>

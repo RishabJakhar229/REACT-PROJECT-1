@@ -15,7 +15,7 @@ function Footer() {
               <span className="grid h-9 w-9 place-items-center rounded-full bg-ivory text-ink">
                 <ChefHat className="h-[18px] w-[18px]" />
               </span>
-              <span className="font-serif text-xl">
+              <span className="font-serif text-[1.35rem]">
                 Recipe<span className="italic text-mist">Finder</span>
               </span>
             </div>
@@ -87,7 +87,7 @@ function Footer() {
 
         <div className="flex flex-col items-start justify-between gap-3 pt-6 text-[0.7rem] tracking-wide text-ivory/35 sm:flex-row sm:items-center">
           <p>© {year} RecipeFinder — brewed in charcoal &amp; ivory.</p>
-          <p className="eyebrow text-[0.58rem]">Set in Instrument Serif &amp; Inter</p>
+          <p className="eyebrow text-[0.6rem]">Set in EB Garamond &amp; Source Sans 3</p>
         </div>
       </div>
     </footer>
